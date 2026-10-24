@@ -1,13 +1,22 @@
 {
   "source_protocol": {
     "participant_article_url": "https://medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156",
+    "accessed_external_material": [
+      "Full text of the linked Medium methodology article.",
+      "Official Kaggle competition page title/closed status and search-indexed leaderboard snippets.",
+      "Search-result titles/snippets for a Kaggle notebook and a GitHub archive; neither code page was opened."
+    ],
     "participant_claim": "More than 80% of one TV airing, in one sitting without a channel change, defines watched/relevant.",
     "participant_training_example": "The author separately describes more than 50% of an airing in one sitting as a basic training signal.",
     "attribution_correction": "The article is by a second-place participant, not the competition winner; it reports that author's private score as 0.42905.",
     "official_kaggle_url": "https://www.kaggle.com/c/sweettv-tv-program-recommender/overview",
     "official_kaggle_access": "The official page title and closed status are discoverable, but its detailed evaluation/rules content is JavaScript-blocked in this environment.",
     "leaderboard_discrepancy": "An indexed Kaggle page under the sweet-tv-channel alias shows a public leader score of 0.28663; it cannot be reconciled with the article's private 0.42905 from accessible rules/page data.",
-    "official_confirmation": "The >80% definition is participant-reported, not independently confirmed in accessible official rules."
+    "official_confirmation": "The >80% definition is participant-reported, not independently confirmed in accessible official rules.",
+    "external_code_access": "None. The Medium article prose and Kaggle page/search snippets were inspected; the linked GitHub source and Kaggle notebook code were not opened, cloned, downloaded, executed, copied, translated, ported, or adapted.",
+    "external_methodological_inspiration": "The participant's reported >80% relevance rule and separate >50% training signal motivated the label reconstruction only.",
+    "implementation_authorship": "Content features, sparse cosine profiles, directional support/confidence/lift rules, MAP evaluation, interval fraction labels, RRF60, and submission generation are implemented in this repository using its existing DuckDB/NumPy/SciPy pipeline.",
+    "additional_instructor_restrictions": "No additional course-specific restrictions beyond those provided in the user's instructions were available in this session."
   },
   "ground_truth": {
     "participant_article_url": "https://medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156",

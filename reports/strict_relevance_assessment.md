@@ -129,3 +129,21 @@ the source cannot detect channel changes hidden within a single viewing row; and
 official policy on recommending previously viewed items is not confirmed. These limits
 mean the strict labels are well-verified from supplied records but still provisional as
 an exact reconstruction of the organizer evaluator.
+
+## Academic Integrity and Implementation Provenance
+
+The cited Medium article was inspected as **related-work prose only**. It motivated
+testing the reported >80% single-airing relevance definition and keeping the >50%
+training signal separate. Its linked repository and Kaggle notebook code were **not
+opened, cloned, downloaded, executed, copied, translated, ported, or adapted**. Search
+results surfaced repository/notebook titles and snippets only; no external source code
+was accessed or reused.
+
+The required content-based and association-rule methods are the project's own
+independent implementations in `data/src/recommendation_methods.py`: sparse TF-IDF
+metadata profiles/cosine ranking, and directional user-transaction rules computed from
+sparse co-occurrence. The strict reassessment uses the project's cached SQL interval
+joins and a separate source-CSV verification scan. NumPy, SciPy, and DuckDB are the
+implementation libraries. The article is cited only for its participant-reported
+methodology; its code is not a source of this implementation. No session history or raw
+CSV was modified.

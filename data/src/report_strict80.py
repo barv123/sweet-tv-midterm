@@ -46,6 +46,9 @@ def run():
     minima={m:min(per_fold[f][m] for f in per_fold) for m in methods}
     source_info={
         "participant_article_url":"https://medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156",
+        "accessed_external_material":["Full text of the linked Medium methodology article.",
+            "Official Kaggle competition page title/closed status and search-indexed leaderboard snippets.",
+            "Search-result titles/snippets for a Kaggle notebook and a GitHub archive; neither code page was opened."],
         "participant_claim":"More than 80% of one TV airing, in one sitting without a channel change, defines watched/relevant.",
         "participant_training_example":"The author separately describes more than 50% of an airing in one sitting as a basic training signal.",
         "attribution_correction":"The article is by a second-place participant, not the competition winner; it reports that author's private score as 0.42905.",
@@ -53,6 +56,10 @@ def run():
         "official_kaggle_access":"The official page title and closed status are discoverable, but its detailed evaluation/rules content is JavaScript-blocked in this environment.",
         "leaderboard_discrepancy":"An indexed Kaggle page under the sweet-tv-channel alias shows a public leader score of 0.28663; it cannot be reconciled with the article's private 0.42905 from accessible rules/page data.",
         "official_confirmation":"The >80% definition is participant-reported, not independently confirmed in accessible official rules.",
+        "external_code_access":"None. The Medium article prose and Kaggle page/search snippets were inspected; the linked GitHub source and Kaggle notebook code were not opened, cloned, downloaded, executed, copied, translated, ported, or adapted.",
+        "external_methodological_inspiration":"The participant's reported >80% relevance rule and separate >50% training signal motivated the label reconstruction only.",
+        "implementation_authorship":"Content features, sparse cosine profiles, directional support/confidence/lift rules, MAP evaluation, interval fraction labels, RRF60, and submission generation are implemented in this repository using its existing DuckDB/NumPy/SciPy pipeline.",
+        "additional_instructor_restrictions":"No additional course-specific restrictions beyond those provided in the user's instructions were available in this session.",
     }
     compact={"source_protocol":source_info,"ground_truth":raw["source_protocol"],
         "training_signal_threshold":">50% of one airing per usable viewing row; no combining across sessions/airings",
@@ -188,6 +195,24 @@ the source cannot detect channel changes hidden within a single viewing row; and
 official policy on recommending previously viewed items is not confirmed. These limits
 mean the strict labels are well-verified from supplied records but still provisional as
 an exact reconstruction of the organizer evaluator.
+
+## Academic Integrity and Implementation Provenance
+
+The cited Medium article was inspected as **related-work prose only**. It motivated
+testing the reported >80% single-airing relevance definition and keeping the >50%
+training signal separate. Its linked repository and Kaggle notebook code were **not
+opened, cloned, downloaded, executed, copied, translated, ported, or adapted**. Search
+results surfaced repository/notebook titles and snippets only; no external source code
+was accessed or reused.
+
+The required content-based and association-rule methods are the project's own
+independent implementations in `data/src/recommendation_methods.py`: sparse TF-IDF
+metadata profiles/cosine ranking, and directional user-transaction rules computed from
+sparse co-occurrence. The strict reassessment uses the project's cached SQL interval
+joins and a separate source-CSV verification scan. NumPy, SciPy, and DuckDB are the
+implementation libraries. The article is cited only for its participant-reported
+methodology; its code is not a source of this implementation. No session history or raw
+CSV was modified.
 """
     (ROOT/"reports"/"strict_relevance_assessment.md").write_text(report,encoding="utf-8")
     existing=(ROOT/"reports"/"advanced_recommendation_experiment.md").read_text(encoding="utf-8")
