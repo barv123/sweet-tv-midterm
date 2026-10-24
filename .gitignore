@@ -1,0 +1,70 @@
+# Raw datasets stay local.
+/data/raw/
+
+# Secrets and credentials.
+.env
+.env.*
+!.env.example
+!.env.sample
+.secrets/
+secrets/
+secrets.*
+credentials/
+credentials.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+.netrc
+.npmrc
+.pypirc
+
+# Virtual environments and dependencies.
+.venv/
+venv/
+env/
+ENV/
+node_modules/
+
+# Caches, generated builds, and logs.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.ipynb_checkpoints/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+*.log
+
+# Local OpenCode state and session exports.
+/.opencode/
+/opencode.db*
+/data/sessions/
+/sessions/
+**/opencode-session*
+**/opencode_session*
+**/session-*.json
+**/session-*.md
+**/session_*.json
+**/session_*.md
+**/ses_*.json
+**/ses_*.md
+
+# Editor and operating-system files.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
