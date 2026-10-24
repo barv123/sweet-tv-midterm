@@ -116,3 +116,22 @@ See [the pre-Kaggle reliability report](reports/pre_kaggle_reliability.md) for t
 new holdout results, user case studies, locally verified submission constraints, and
 remaining competition-rule uncertainties. Per-user evaluation files and submission
 CSVs are intentionally kept local and ignored by Git.
+
+## Strict single-airing relevance reassessment
+
+The participant-described >80% airing ground truth is evaluated separately from the
+>50% single-airing training signal. Re-run from the existing interval cache with:
+
+```powershell
+$env:SWEET_TV_CACHE = "D:\sweet-tv-midterm-cache"
+.\.venv\Scripts\python.exe data/src/test_strict_labels.py
+.\.venv\Scripts\python.exe data/src/strict_relevance_experiment.py
+.\.venv\Scripts\python.exe data/src/report_strict80.py
+```
+
+This reuses cached viewing-to-schedule interval edges, independently checks selected
+labels against original CSV rows, evaluates both chronological holdouts, and creates
+separate repeat/recency and robust-alternative candidates. See
+[the strict relevance assessment](reports/strict_relevance_assessment.md). The >80%
+definition remains participant-reported rather than confirmed by accessible official
+Kaggle rule text; neither candidate is uploaded automatically.

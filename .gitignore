@@ -9,6 +9,7 @@
 /results/*_validation.json
 /results/baseline_experiment.json
 /results/pre_kaggle_reliability.json
+/results/strict80_evaluation.json
 
 # Secrets and credentials.
 .env

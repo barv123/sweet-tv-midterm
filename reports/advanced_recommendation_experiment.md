@@ -250,3 +250,9 @@ The generated candidate has passed file validation but has not been submitted.
 One fixed weeks 15-16 chronological inner holdout and a local candidate-file rules
 check were completed after this report. See [the reliability addendum](pre_kaggle_reliability.md)
 for measured scores, per-user cases, boundary validation, and the upload recommendation.
+
+
+## IX. Strict Relevance Reassessment
+
+The later strict single-airing >80% ground-truth reassessment supersedes the 60-second
+proxy MAP@5 values above for Kaggle-alignment. See [the strict relevance report](strict_relevance_assessment.md).
