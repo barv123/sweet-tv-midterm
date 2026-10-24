@@ -1,0 +1,8 @@
+method,map_at_5,runtime_seconds,candidate_count,candidates_with_positive_evidence,unique_recommended_items,recommended_items_unseen_in_training_behavior,full_popularity_fallback_users,users_with_zero_hits,evaluated_users,excluded_users
+popularity,0.7947830687830688,13.31363,6384,2206,5,0,1260,46,1260,0
+repeat_recency_heuristic,0.796042328042328,26.573625,6384,2170,378,0,10,37,1260,0
+content_metadata,0.18695767195767196,2.104872500000056,6384,6384,276,209,10,661,1260,0
+content_metadata_title,0.3463703703703704,2.3695819999993546,6384,6384,237,122,10,422,1260,0
+association_count25_lift1,0.7738835978835978,4.157913000002736,6384,1197,15,0,10,48,1260,0
+association_count50_lift1_2,0.4004153439153439,3.9464638999997987,6384,953,77,0,10,153,1260,0
+hybrid_rrf60,0.8169656084656084,4.491728100001637,6384,2040,41,0,10,37,1260,0

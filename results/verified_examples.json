@@ -1,0 +1,685 @@
+[
+  {
+    "viewing_source_row": 1,
+    "cases": [
+      "schedule_gap"
+    ],
+    "channel_id": 6,
+    "start_time": "2020-03-09 00:00:02+02:00",
+    "stop_time": "2020-03-09 00:01:53+02:00",
+    "reported_duration": 111,
+    "independently_verified": true,
+    "schedule_overlaps": []
+  },
+  {
+    "viewing_source_row": 26,
+    "cases": [
+      "unmatched_channel"
+    ],
+    "channel_id": 1174,
+    "start_time": "2020-03-09 00:00:41+02:00",
+    "stop_time": "2020-03-09 00:01:42+02:00",
+    "reported_duration": 61,
+    "independently_verified": true,
+    "schedule_overlaps": []
+  },
+  {
+    "viewing_source_row": 104,
+    "cases": [
+      "unknown_only"
+    ],
+    "channel_id": 945,
+    "start_time": "2020-03-09 00:02:58+02:00",
+    "stop_time": "2020-03-09 00:06:41+02:00",
+    "reported_duration": 223,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 754441,
+        "tv_show_id": 0,
+        "overlap_seconds": 223
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 1516,
+    "cases": [
+      "multiple_identified"
+    ],
+    "channel_id": 1495,
+    "start_time": "2020-03-09 00:40:50+02:00",
+    "stop_time": "2020-03-09 02:28:55+02:00",
+    "reported_duration": 6485,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 1062939,
+        "tv_show_id": 12001732,
+        "overlap_seconds": 1380
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 1062940,
+        "tv_show_id": 0,
+        "overlap_seconds": 1320
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 1062941,
+        "tv_show_id": 12002856,
+        "overlap_seconds": 660
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 1062942,
+        "tv_show_id": 12002856,
+        "overlap_seconds": 720
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 1062943,
+        "tv_show_id": 12001682,
+        "overlap_seconds": 295
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 2418,
+    "cases": [
+      "single_identified"
+    ],
+    "channel_id": 1495,
+    "start_time": "2020-03-09 01:35:55+02:00",
+    "stop_time": "2020-03-09 01:37:07+02:00",
+    "reported_duration": 72,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 1062939,
+        "tv_show_id": 12001732,
+        "overlap_seconds": 72
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 6969,
+    "cases": [
+      "exact_boundary"
+    ],
+    "channel_id": 597,
+    "start_time": "2020-03-09 08:15:00+02:00",
+    "stop_time": "2020-03-09 10:41:02+02:00",
+    "reported_duration": 8762,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 435999,
+        "tv_show_id": 12002456,
+        "overlap_seconds": 780
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436000,
+        "tv_show_id": 12002456,
+        "overlap_seconds": 720
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436001,
+        "tv_show_id": 0,
+        "overlap_seconds": 780
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436002,
+        "tv_show_id": 0,
+        "overlap_seconds": 420
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436003,
+        "tv_show_id": 0,
+        "overlap_seconds": 480
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436004,
+        "tv_show_id": 0,
+        "overlap_seconds": 360
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436005,
+        "tv_show_id": 0,
+        "overlap_seconds": 300
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436006,
+        "tv_show_id": 0,
+        "overlap_seconds": 360
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436007,
+        "tv_show_id": 0,
+        "overlap_seconds": 840
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436008,
+        "tv_show_id": 12002805,
+        "overlap_seconds": 240
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436009,
+        "tv_show_id": 12002805,
+        "overlap_seconds": 240
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436010,
+        "tv_show_id": 12002805,
+        "overlap_seconds": 180
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436011,
+        "tv_show_id": 12002805,
+        "overlap_seconds": 240
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436012,
+        "tv_show_id": 0,
+        "overlap_seconds": 720
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436013,
+        "tv_show_id": 0,
+        "overlap_seconds": 780
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436014,
+        "tv_show_id": 0,
+        "overlap_seconds": 660
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436015,
+        "tv_show_id": 0,
+        "overlap_seconds": 600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 436016,
+        "tv_show_id": 0,
+        "overlap_seconds": 62
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 411360,
+    "cases": [
+      "ambiguous"
+    ],
+    "channel_id": 1020,
+    "start_time": "2020-03-16 06:20:07+02:00",
+    "stop_time": "2020-03-16 06:47:58+02:00",
+    "reported_duration": 1671,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 791130,
+        "tv_show_id": 0,
+        "overlap_seconds": 1671
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 791131,
+        "tv_show_id": 0,
+        "overlap_seconds": 1671
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 524715,
+    "cases": [
+      "long_session"
+    ],
+    "channel_id": 3,
+    "start_time": "2020-03-18 06:00:29+02:00",
+    "stop_time": "2020-03-19 14:31:28+02:00",
+    "reported_duration": 117059,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 194,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 1771
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 195,
+        "tv_show_id": 20088,
+        "overlap_seconds": 1800
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 196,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 197,
+        "tv_show_id": 20088,
+        "overlap_seconds": 3000
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 198,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 199,
+        "tv_show_id": 20088,
+        "overlap_seconds": 3000
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 200,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 201,
+        "tv_show_id": 20088,
+        "overlap_seconds": 900
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 202,
+        "tv_show_id": 0,
+        "overlap_seconds": 3300
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 203,
+        "tv_show_id": 0,
+        "overlap_seconds": 3300
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 204,
+        "tv_show_id": 400426,
+        "overlap_seconds": 2700
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 205,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 1200
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 206,
+        "tv_show_id": 400426,
+        "overlap_seconds": 3900
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 207,
+        "tv_show_id": 6500479,
+        "overlap_seconds": 3600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 208,
+        "tv_show_id": 6500479,
+        "overlap_seconds": 3600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 209,
+        "tv_show_id": 10002451,
+        "overlap_seconds": 4800
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 210,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 1500
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 211,
+        "tv_show_id": 10002451,
+        "overlap_seconds": 3000
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 212,
+        "tv_show_id": 0,
+        "overlap_seconds": 3600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 213,
+        "tv_show_id": 6700482,
+        "overlap_seconds": 1800
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 214,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 4500
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 215,
+        "tv_show_id": 0,
+        "overlap_seconds": 7200
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 216,
+        "tv_show_id": 6500479,
+        "overlap_seconds": 3900
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 217,
+        "tv_show_id": 6500479,
+        "overlap_seconds": 2400
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 218,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 219,
+        "tv_show_id": 6500479,
+        "overlap_seconds": 1800
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 220,
+        "tv_show_id": 10003080,
+        "overlap_seconds": 15000
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 221,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 4200
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 222,
+        "tv_show_id": 20088,
+        "overlap_seconds": 1800
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 223,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 224,
+        "tv_show_id": 20088,
+        "overlap_seconds": 3000
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 225,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 226,
+        "tv_show_id": 20088,
+        "overlap_seconds": 3000
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 227,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 228,
+        "tv_show_id": 20088,
+        "overlap_seconds": 900
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 229,
+        "tv_show_id": 0,
+        "overlap_seconds": 3300
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 230,
+        "tv_show_id": 0,
+        "overlap_seconds": 3600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 231,
+        "tv_show_id": 400426,
+        "overlap_seconds": 2400
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 232,
+        "tv_show_id": 2400480,
+        "overlap_seconds": 1200
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 233,
+        "tv_show_id": 400426,
+        "overlap_seconds": 3900
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 234,
+        "tv_show_id": 6500479,
+        "overlap_seconds": 3988
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 1250164,
+    "cases": [
+      "duration_mismatch"
+    ],
+    "channel_id": 1521,
+    "start_time": "2020-03-28 22:47:45+02:00",
+    "stop_time": "2020-03-30 09:02:48+03:00",
+    "reported_duration": 119703,
+    "independently_verified": true,
+    "schedule_overlaps": []
+  },
+  {
+    "viewing_source_row": 1250740,
+    "cases": [
+      "dst_crossing_identified"
+    ],
+    "channel_id": 7,
+    "start_time": "2020-03-28 22:56:59+02:00",
+    "stop_time": "2020-03-29 04:11:55+03:00",
+    "reported_duration": 15296,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 6305,
+        "tv_show_id": 90074731,
+        "overlap_seconds": 2581
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 6306,
+        "tv_show_id": 90082541,
+        "overlap_seconds": 5400
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 6307,
+        "tv_show_id": 200469,
+        "overlap_seconds": 2700
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 6308,
+        "tv_show_id": 0,
+        "overlap_seconds": 2700
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 6309,
+        "tv_show_id": 0,
+        "overlap_seconds": 1915
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 1254033,
+    "cases": [
+      "dst_day"
+    ],
+    "channel_id": 212,
+    "start_time": "2020-03-29 00:00:02+02:00",
+    "stop_time": "2020-03-29 00:01:21+02:00",
+    "reported_duration": 79,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 130471,
+        "tv_show_id": 9003006,
+        "overlap_seconds": 79
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 3912915,
+    "cases": [
+      "split_crossing"
+    ],
+    "channel_id": 6,
+    "start_time": "2020-05-17 04:48:57+03:00",
+    "stop_time": "2020-05-18 00:54:12+03:00",
+    "reported_duration": 72315,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 5949,
+        "tv_show_id": 5200464,
+        "overlap_seconds": 3663
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 5950,
+        "tv_show_id": 200333,
+        "overlap_seconds": 10500
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 5951,
+        "tv_show_id": 90037823,
+        "overlap_seconds": 6600
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 5952,
+        "tv_show_id": 10002744,
+        "overlap_seconds": 19500
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 5953,
+        "tv_show_id": 400361,
+        "overlap_seconds": 10800
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 5954,
+        "tv_show_id": 400387,
+        "overlap_seconds": 3300
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 5955,
+        "tv_show_id": 500331,
+        "overlap_seconds": 7800
+      },
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 5956,
+        "tv_show_id": 500466,
+        "overlap_seconds": 10152
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 3945174,
+    "cases": [
+      "validation"
+    ],
+    "channel_id": 23,
+    "start_time": "2020-05-18 00:00:05+03:00",
+    "stop_time": "2020-05-18 00:01:36+03:00",
+    "reported_duration": 91,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_11-20-final.csv",
+        "source_row": 29472,
+        "tv_show_id": 90082248,
+        "overlap_seconds": 91
+      }
+    ]
+  },
+  {
+    "viewing_source_row": 5543868,
+    "cases": [
+      "late_validation"
+    ],
+    "channel_id": 4,
+    "start_time": "2020-07-20 00:00:07+03:00",
+    "stop_time": "2020-07-20 00:02:59+03:00",
+    "reported_duration": 172,
+    "independently_verified": true,
+    "schedule_overlaps": [
+      {
+        "file": "export_arh_21-30-final.csv",
+        "source_row": 2672,
+        "tv_show_id": 90036372,
+        "overlap_seconds": 172
+      }
+    ]
+  }
+]

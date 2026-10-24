@@ -1,0 +1,33 @@
+{
+  "content": [
+    {
+      "name": "content_metadata",
+      "include_title": false
+    },
+    {
+      "name": "content_metadata_title",
+      "include_title": true
+    }
+  ],
+  "association": [
+    {
+      "name": "association_count25_lift1",
+      "min_pair_count": 25,
+      "min_lift": 1.0
+    },
+    {
+      "name": "association_count50_lift1_2",
+      "min_pair_count": 50,
+      "min_lift": 1.2
+    }
+  ],
+  "fixed": {
+    "history_half_life_days": 14,
+    "max_rules_per_antecedent": 100,
+    "min_confidence": 0.1,
+    "min_item_viewers": 20,
+    "ranking_depth": 100
+  },
+  "hybrid": "One equal-weight reciprocal-rank fusion: strongest advanced configuration + repeat/recency + popularity; k=60, top100 inputs",
+  "selection": "Maximum validation MAP@5; exact ties resolved by method name. These are development scores after validation selection."
+}

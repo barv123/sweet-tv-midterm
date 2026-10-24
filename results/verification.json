@@ -1,0 +1,212 @@
+{
+  "input_integrity": {
+    "dataset11-30.csv": "SHA-256 unchanged",
+    "export_arh_11-20-final.csv": "SHA-256 unchanged",
+    "export_arh_21-30-final.csv": "SHA-256 unchanged",
+    "export_arh_31-42-final.csv": "SHA-256 unchanged",
+    "submission.csv": "SHA-256 unchanged"
+  },
+  "kyiv_dst_check": {
+    "discrepant_sessions": 117,
+    "resolved_as_kyiv_elapsed_seconds": 117,
+    "nonexistent_endpoint_times": 0
+  },
+  "dst_window": {
+    "sessions_starting_on_dst_day": 71094,
+    "starts_in_kyiv_missing_hour": 0,
+    "stops_in_kyiv_missing_hour": 0
+  },
+  "schedule_dst_check": {
+    "rows_starting_in_kyiv_missing_hour": 0,
+    "channels": 0
+  },
+  "schedule_overlap_details": [
+    {
+      "source": "export_arh_11-20-final.csv",
+      "source_row": 791131,
+      "channel_id": 1020,
+      "start_time": "2020-03-16 06:20:00",
+      "end_time": "2020-03-16 08:10:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-03-16 07:00:00",
+      "overlapping_seconds": 2400
+    },
+    {
+      "source": "export_arh_11-20-final.csv",
+      "source_row": 186401,
+      "channel_id": 282,
+      "start_time": "2020-03-30 06:00:00",
+      "end_time": "2020-03-30 06:30:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-03-30 06:30:00",
+      "overlapping_seconds": 1800
+    },
+    {
+      "source": "export_arh_21-30-final.csv",
+      "source_row": 380463,
+      "channel_id": 487,
+      "start_time": "2020-05-18 00:20:00",
+      "end_time": "2020-05-18 03:10:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-05-18 01:00:00",
+      "overlapping_seconds": 2400
+    },
+    {
+      "source": "export_arh_21-30-final.csv",
+      "source_row": 537587,
+      "channel_id": 667,
+      "start_time": "2020-07-20 06:00:00",
+      "end_time": "2020-07-20 11:00:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-07-20 11:00:00",
+      "overlapping_seconds": 18000
+    },
+    {
+      "source": "export_arh_21-30-final.csv",
+      "source_row": 600809,
+      "channel_id": 724,
+      "start_time": "2020-07-20 06:00:00",
+      "end_time": "2020-07-20 11:00:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-07-20 11:00:00",
+      "overlapping_seconds": 18000
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "source_row": 38919,
+      "channel_id": 25,
+      "start_time": "2020-08-31 07:00:00",
+      "end_time": "2020-08-31 08:00:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-08-31 08:00:00",
+      "overlapping_seconds": 3600
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "source_row": 789754,
+      "channel_id": 803,
+      "start_time": "2020-08-31 07:00:00",
+      "end_time": "2020-08-31 08:00:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-08-31 08:00:00",
+      "overlapping_seconds": 3600
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "source_row": 916493,
+      "channel_id": 945,
+      "start_time": "2020-09-28 00:00:00",
+      "end_time": "2020-09-28 00:10:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-09-28 00:02:00",
+      "overlapping_seconds": 120
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "source_row": 607187,
+      "channel_id": 652,
+      "start_time": "2020-09-28 06:00:00",
+      "end_time": "2020-09-28 06:45:00",
+      "tv_show_id": 0,
+      "previous_end": "2020-09-28 06:10:00",
+      "overlapping_seconds": 600
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "source_row": 985927,
+      "channel_id": 1060,
+      "start_time": "2020-10-05 00:00:00",
+      "end_time": "2020-10-05 01:50:00",
+      "tv_show_id": 90081851,
+      "previous_end": "2020-10-05 00:05:00",
+      "overlapping_seconds": 300
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "source_row": 1289621,
+      "channel_id": 1520,
+      "start_time": "2020-10-05 06:00:00",
+      "end_time": "2020-10-05 07:50:00",
+      "tv_show_id": 90039050,
+      "previous_end": "2020-10-05 06:25:00",
+      "overlapping_seconds": 1500
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "source_row": 1080298,
+      "channel_id": 1117,
+      "start_time": "2020-10-05 06:30:00",
+      "end_time": "2020-10-05 07:50:00",
+      "tv_show_id": 90059058,
+      "previous_end": "2020-10-05 07:30:00",
+      "overlapping_seconds": 3600
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "source_row": 1290723,
+      "channel_id": 1521,
+      "start_time": "2020-10-05 07:20:00",
+      "end_time": "2020-10-05 09:30:00",
+      "tv_show_id": 90059006,
+      "previous_end": "2020-10-05 08:05:00",
+      "overlapping_seconds": 2700
+    }
+  ],
+  "schedule_dst_adjacency": [
+    {
+      "next_start_minus_computed_end_seconds": 3600,
+      "rows": 394
+    }
+  ],
+  "same_user_overlaps": {
+    "same_user_channel_overlapping_rows": 96555,
+    "affected_users": 2613
+  },
+  "unmatched_time_breakdown": {
+    "shared_channel_unmatched_rows": 299718,
+    "before_channel_schedule_begins": 297331,
+    "after_channel_schedule_ends": 2009,
+    "inside_channel_coverage_gaps": 378
+  },
+  "corrected_dst_adjacency": [
+    {
+      "next_start_minus_corrected_end_seconds": 0,
+      "rows": 394
+    }
+  ],
+  "conflicting_session_keys": {
+    "affected_rows": 210,
+    "affected_users": 35
+  },
+  "zero_id_summary": {
+    "zero_id_rows": 3062115,
+    "zero_id_percent": 88.91140465161656
+  },
+  "candidate_coverage": [
+    {
+      "period": "validation",
+      "candidates": 6384,
+      "candidates_unseen_in_history": 4178,
+      "label_items_outside_catalog": 0
+    },
+    {
+      "period": "final",
+      "candidates": 6649,
+      "candidates_unseen_in_history": 3528
+    }
+  ],
+  "train_schedule_source_leaks": 0,
+  "validation_relevance_distribution": {
+    "min_relevant_items": 1,
+    "relevant_item_quantiles": [
+      58.0,
+      110.0,
+      183.75,
+      274.5
+    ],
+    "max_relevant_items": 819,
+    "users_with_fewer_than_5_items": 62
+  },
+  "interaction_table_rows": 3741530,
+  "runtime_seconds": 24.028
+}

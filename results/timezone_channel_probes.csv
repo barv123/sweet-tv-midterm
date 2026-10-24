@@ -1,0 +1,9 @@
+channel_mapping,viewing_shift_hours,sample_rows,any_schedule_matches,identified_matches,stops_within_120s_of_boundary,starts_within_120s_of_boundary,before_dst_rows,before_dst_stop_aligned,after_dst_rows,after_dst_stop_aligned
+equal_numeric_ids,-3,38800,35161,18018,2685,2722,11929,783,26871,1902
+equal_numeric_ids,-2,38800,35161,18047,2724,2737,11929,847,26871,1877
+equal_numeric_ids,-1,38800,35162,18235,2576,2624,11929,817,26871,1759
+equal_numeric_ids,0,38800,35163,18651,3482,2877,11929,1102,26871,2380
+equal_numeric_ids,1,38800,35163,18297,2622,2535,11929,844,26871,1778
+equal_numeric_ids,2,38800,35164,18255,2481,2487,11929,760,26871,1721
+equal_numeric_ids,3,38800,35166,18269,2515,2503,11929,789,26871,1726
+cyclic_permutation_control,0,38800,34227,14739,2697,2694,11929,868,26871,1829

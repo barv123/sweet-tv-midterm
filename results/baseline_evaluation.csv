@@ -1,0 +1,9 @@
+method,cohort,evaluated_users,excluded_template_users,empty_truth_users,eligible_candidates,relevant_user_item_pairs,distinct_relevant_items,map_at_5
+popularity,all_template_users,1260,0,14,6384,229679,3169,0.7947830687830687
+popularity,nonempty_truth,1246,14,0,6384,229679,3169,0.803713215623328
+popularity,warm_history,1250,10,12,6384,229055,3168,0.7976133333333333
+popularity,cold_history,10,1250,2,6384,624,465,0.441
+repeat_recency_heuristic,all_template_users,1260,0,14,6384,229679,3169,0.796042328042328
+repeat_recency_heuristic,nonempty_truth,1246,14,0,6384,229679,3169,0.8049866238630283
+repeat_recency_heuristic,warm_history,1250,10,12,6384,229055,3168,0.7988826666666666
+repeat_recency_heuristic,cold_history,10,1250,2,6384,624,465,0.441

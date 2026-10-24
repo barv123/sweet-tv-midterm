@@ -1,0 +1,4 @@
+period,start_inclusive,end_exclusive,start_assigned_raw_sessions,raw_users,cutoff_crossing_sessions,usable_interactions,usable_sessions,usable_users,usable_items,user_item_pairs,submission_users_with_history
+train,2020-03-09 00:00:00,2020-05-18 00:00:00,3945173,4876,1007,2310865,1877749,4841,2972,841221,1250
+validation,2020-05-18 00:00:00,2020-07-27 00:00:00,1876814,4820,0,1428512,1057953,4806,3229,649303,1246
+refit,2020-03-09 00:00:00,2020-07-27 00:00:00,5821987,4914,0,3741530,2936467,4895,4362,1350278,1258

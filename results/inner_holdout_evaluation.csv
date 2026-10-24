@@ -1,0 +1,4 @@
+method,map_at_5,evaluated_users,excluded_users,empty_truth_users,candidate_count,distinct_relevant_user_item_pairs,distinct_relevant_items,users_without_training_history,cold_user_map_at_5,users_with_zero_hits,unique_recommended_items,candidates_with_training_evidence,runtime_seconds
+popularity,0.6376031746031745,1260,0,39,2143,75493,1032,18,0.10537037037037038,102,5,679,0.13451419999910286
+repeat_recency,0.7238941798941798,1260,0,39,2143,75493,1032,18,0.10537037037037038,83,276,660,0.26617540000006557
+hybrid_rrf60,0.6744596560846561,1260,0,39,2143,75493,1032,18,0.10537037037037038,98,23,679,2.983731899999839

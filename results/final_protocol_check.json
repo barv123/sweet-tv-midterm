@@ -1,0 +1,52 @@
+{
+  "submission_validation": {
+    "path": "results/advanced_candidate_submission.csv",
+    "rows": 1260,
+    "unique_users": 1260,
+    "template_order_exact": true,
+    "eligible_candidates": 6649,
+    "prediction_slots": 6300,
+    "invalid_format_rows": 0,
+    "ineligible_item_rows": 0,
+    "repeated_item_rows": 0,
+    "sha256": "4abb82f4dd24b0c8f199ea33262f2c2ec474e42cd161f8b8083f3d92d85248ee",
+    "bytes": 74791,
+    "header": "user_id,tv_show_id",
+    "line_endings": "LF",
+    "errors": [],
+    "passed": true
+  },
+  "final_training_history": {
+    "training_interactions": 3741530,
+    "training_sessions": 2936467,
+    "historical_users": 4895,
+    "last_training_session_end": "2020-07-26 23:59:58"
+  },
+  "final_schedule_and_boundaries": {
+    "positive_nonzero_airings_in_source_files": 266279,
+    "airings_intersecting_target": 144842,
+    "target_candidates": 6649,
+    "previous_file_boundary_airings": 58,
+    "starts_at_or_after_exclusive_end": 257
+  },
+  "previously_seen_recommendations": {
+    "prediction_slots": 6300,
+    "unique_user_item_predictions": 6300,
+    "previously_seen_slots": 6189,
+    "previously_seen_user_item_pairs": 6189
+  },
+  "candidate_window": {
+    "start_inclusive": "2020-07-27 00:00:00",
+    "end_exclusive": "2020-10-19 00:00:00",
+    "eligible_program_ids": 6649,
+    "uses_positive_tv_show_ids_only": true
+  },
+  "raw_inputs_match_audit": true,
+  "official_kaggle_rules_found_locally": false,
+  "official_rule_limitations": [
+    "No organizer evaluator, scoring source, or candidate-policy document exists in the local project.",
+    "The template confirms columns, row order, and five space-separated slots; it does not define MAP@5 empty-truth handling or repeat eligibility.",
+    "Previously watched programs and the project's >=60-second relevance rule are local protocol assumptions, not independently confirmed Kaggle rules."
+  ],
+  "kaggle_uploaded": false
+}

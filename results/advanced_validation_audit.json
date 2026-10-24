@@ -1,0 +1,470 @@
+{
+  "provenance_checks": {
+    "training_after_cutoff": 0,
+    "heldout_outside_period": 0,
+    "shared_session_ids": 0,
+    "label_user_or_time_differs_from_viewing": 0,
+    "label_item_differs_from_airing": 0,
+    "training_schedule_from_validation": 0,
+    "label_items_outside_candidates": 0,
+    "reconstructed_label_symmetric_difference": 0
+  },
+  "archived_rankings_reproduced_from_training_only": true,
+  "baseline_map_at_5": {
+    "popularity": 0.7947830687830687,
+    "repeat_recency_heuristic": 0.796042328042328
+  },
+  "relevant_count_distribution": {
+    "minimum": 0,
+    "maximum": 819,
+    "mean": 182.28492063492064,
+    "quantiles": [
+      0.0,
+      33.95,
+      52.900000000000006,
+      88.0,
+      159.0,
+      245.0,
+      348.0,
+      415.04999999999995,
+      607.0
+    ],
+    "empty_users": 14,
+    "fewer_than_5": 16,
+    "relevant_user_item_pairs": 229679
+  },
+  "top5_rank_hit_rates": [
+    {
+      "rank": 1,
+      "tv_show_id": 2400480,
+      "training_viewers": 4482,
+      "validation_users_with_item": 1138,
+      "hit_rate": 0.9031746031746032,
+      "cumulative_any_hit_users": 1138
+    },
+    {
+      "rank": 2,
+      "tv_show_id": 240081,
+      "training_viewers": 4243,
+      "validation_users_with_item": 1078,
+      "hit_rate": 0.8555555555555555,
+      "cumulative_any_hit_users": 1190
+    },
+    {
+      "rank": 3,
+      "tv_show_id": 2400508,
+      "training_viewers": 3961,
+      "validation_users_with_item": 974,
+      "hit_rate": 0.773015873015873,
+      "cumulative_any_hit_users": 1200
+    },
+    {
+      "rank": 4,
+      "tv_show_id": 6500479,
+      "training_viewers": 3944,
+      "validation_users_with_item": 1035,
+      "hit_rate": 0.8214285714285714,
+      "cumulative_any_hit_users": 1211
+    },
+    {
+      "rank": 5,
+      "tv_show_id": 2400467,
+      "training_viewers": 3809,
+      "validation_users_with_item": 985,
+      "hit_rate": 0.7817460317460317,
+      "cumulative_any_hit_users": 1214
+    }
+  ],
+  "top5_hit_histogram": [
+    {
+      "hits_among_popularity_top5": 0,
+      "users": 46
+    },
+    {
+      "hits_among_popularity_top5": 1,
+      "users": 43
+    },
+    {
+      "hits_among_popularity_top5": 2,
+      "users": 66
+    },
+    {
+      "hits_among_popularity_top5": 3,
+      "users": 119
+    },
+    {
+      "hits_among_popularity_top5": 4,
+      "users": 252
+    },
+    {
+      "hits_among_popularity_top5": 5,
+      "users": 734
+    }
+  ],
+  "top5_total_hits": 5210,
+  "top5_micro_recall": 0.022683832653398874,
+  "repeat_labels": {
+    "repeated_user_item_pairs": 50819
+  },
+  "item_identity": {
+    "positive_ids_checked": 8234,
+    "ids_with_multiple_titles": 3498,
+    "ids_with_multiple_categories": 0,
+    "ids_with_multiple_year_values": 5,
+    "ids_with_multiple_directors": 22,
+    "ids_with_multiple_genre_tuples": 108,
+    "top5_checks": [
+      {
+        "tv_show_id": 240081,
+        "airings": 899,
+        "title_variants": 4,
+        "category_variants": 1,
+        "year_variants": 0,
+        "director_variants": 0,
+        "genre_tuple_variants": 1
+      },
+      {
+        "tv_show_id": 2400467,
+        "airings": 365,
+        "title_variants": 1,
+        "category_variants": 1,
+        "year_variants": 1,
+        "director_variants": 0,
+        "genre_tuple_variants": 1
+      },
+      {
+        "tv_show_id": 2400480,
+        "airings": 2449,
+        "title_variants": 4,
+        "category_variants": 1,
+        "year_variants": 1,
+        "director_variants": 0,
+        "genre_tuple_variants": 1
+      },
+      {
+        "tv_show_id": 2400508,
+        "airings": 677,
+        "title_variants": 2,
+        "category_variants": 1,
+        "year_variants": 1,
+        "director_variants": 0,
+        "genre_tuple_variants": 1
+      },
+      {
+        "tv_show_id": 6500479,
+        "airings": 346,
+        "title_variants": 100,
+        "category_variants": 1,
+        "year_variants": 1,
+        "director_variants": 0,
+        "genre_tuple_variants": 1
+      }
+    ],
+    "meaning": "Multiple titles can be episodes/editions or translations; metadata agreement is evidence, not external identity certification."
+  },
+  "independent_real_user_examples": [
+    {
+      "template_row": 1,
+      "method": "popularity",
+      "raw_valid_sessions": 3347,
+      "relevant_items": 171,
+      "predictions": [
+        2400480,
+        240081,
+        2400508,
+        6500479,
+        2400467
+      ],
+      "rank_hit_flags": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "precision_numerator_fraction": "5",
+      "denominator": 5,
+      "ap_fraction": "1",
+      "ap_at_5": 1.0,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 1,
+      "method": "repeat_recency_heuristic",
+      "raw_valid_sessions": 3347,
+      "relevant_items": 171,
+      "predictions": [
+        2400480,
+        240081,
+        20088,
+        200337,
+        2400508
+      ],
+      "rank_hit_flags": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "precision_numerator_fraction": "5",
+      "denominator": 5,
+      "ap_fraction": "1",
+      "ap_at_5": 1.0,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 2,
+      "method": "popularity",
+      "raw_valid_sessions": 255,
+      "relevant_items": 19,
+      "predictions": [
+        2400480,
+        240081,
+        2400508,
+        6500479,
+        2400467
+      ],
+      "rank_hit_flags": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "precision_numerator_fraction": "11/4",
+      "denominator": 5,
+      "ap_fraction": "11/20",
+      "ap_at_5": 0.55,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 2,
+      "method": "repeat_recency_heuristic",
+      "raw_valid_sessions": 255,
+      "relevant_items": 19,
+      "predictions": [
+        2400480,
+        12001682,
+        240081,
+        6700482,
+        12002355
+      ],
+      "rank_hit_flags": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "precision_numerator_fraction": "5",
+      "denominator": 5,
+      "ap_fraction": "1",
+      "ap_at_5": 1.0,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 12,
+      "method": "popularity",
+      "raw_valid_sessions": 182,
+      "relevant_items": 109,
+      "predictions": [
+        2400480,
+        240081,
+        2400508,
+        6500479,
+        2400467
+      ],
+      "rank_hit_flags": [
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "precision_numerator_fraction": "4",
+      "denominator": 5,
+      "ap_fraction": "4/5",
+      "ap_at_5": 0.8,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 12,
+      "method": "repeat_recency_heuristic",
+      "raw_valid_sessions": 182,
+      "relevant_items": 109,
+      "predictions": [
+        6500479,
+        240081,
+        90075455,
+        400357,
+        90057471
+      ],
+      "rank_hit_flags": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "precision_numerator_fraction": "2",
+      "denominator": 5,
+      "ap_fraction": "2/5",
+      "ap_at_5": 0.4,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 44,
+      "method": "popularity",
+      "raw_valid_sessions": 102,
+      "relevant_items": 87,
+      "predictions": [
+        2400480,
+        240081,
+        2400508,
+        6500479,
+        2400467
+      ],
+      "rank_hit_flags": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "precision_numerator_fraction": "0",
+      "denominator": 5,
+      "ap_fraction": "0",
+      "ap_at_5": 0.0,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 44,
+      "method": "repeat_recency_heuristic",
+      "raw_valid_sessions": 102,
+      "relevant_items": 87,
+      "predictions": [
+        10002079,
+        90075995,
+        90064141,
+        1000376,
+        90060882
+      ],
+      "rank_hit_flags": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "precision_numerator_fraction": "1/4",
+      "denominator": 5,
+      "ap_fraction": "1/20",
+      "ap_at_5": 0.05,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 87,
+      "method": "popularity",
+      "raw_valid_sessions": 0,
+      "relevant_items": 0,
+      "predictions": [
+        2400480,
+        240081,
+        2400508,
+        6500479,
+        2400467
+      ],
+      "rank_hit_flags": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "precision_numerator_fraction": "0",
+      "denominator": 0,
+      "ap_fraction": "0",
+      "ap_at_5": 0.0,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 87,
+      "method": "repeat_recency_heuristic",
+      "raw_valid_sessions": 0,
+      "relevant_items": 0,
+      "predictions": [
+        2400480,
+        10002514,
+        6700482,
+        12001682,
+        400335
+      ],
+      "rank_hit_flags": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "precision_numerator_fraction": "0",
+      "denominator": 0,
+      "ap_fraction": "0",
+      "ap_at_5": 0.0,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 114,
+      "method": "popularity",
+      "raw_valid_sessions": 479,
+      "relevant_items": 102,
+      "predictions": [
+        2400480,
+        240081,
+        2400508,
+        6500479,
+        2400467
+      ],
+      "rank_hit_flags": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "precision_numerator_fraction": "11/4",
+      "denominator": 5,
+      "ap_fraction": "11/20",
+      "ap_at_5": 0.55,
+      "raw_csv_labels_exactly_match": true
+    },
+    {
+      "template_row": 114,
+      "method": "repeat_recency_heuristic",
+      "raw_valid_sessions": 479,
+      "relevant_items": 102,
+      "predictions": [
+        2400480,
+        240081,
+        2400508,
+        6500479,
+        2400467
+      ],
+      "rank_hit_flags": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "precision_numerator_fraction": "11/4",
+      "denominator": 5,
+      "ap_fraction": "11/20",
+      "ap_at_5": 0.55,
+      "raw_csv_labels_exactly_match": true
+    }
+  ],
+  "protocol_changed": false,
+  "baseline_artifacts_unchanged": true,
+  "runtime_seconds": 49.328
+}

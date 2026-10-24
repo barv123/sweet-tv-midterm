@@ -1,0 +1,32 @@
+{
+  "all_usable_interactions": 3741530,
+  "training": 2310865,
+  "validation": 1428512,
+  "crossing_interactions": 2153,
+  "crossing_sessions_with_interactions": 765,
+  "raw_cutoff_crossing_sessions": 1007,
+  "crossing_sessions_without_default_interactions": 242,
+  "difference": 2153,
+  "crossing_edge_positions": {
+    "entirely_before_cutoff": 896,
+    "entirely_after_cutoff": 530,
+    "straddling_cutoff": 727
+  },
+  "crossing_session_reasons": [
+    {
+      "reason": "has_usable_default_interactions",
+      "sessions": 765
+    },
+    {
+      "reason": "no_identified_program_overlap",
+      "sessions": 242
+    }
+  ],
+  "leakage_checks": {
+    "train_validation_shared_viewing_ids": 0,
+    "training_after_cutoff": 0,
+    "validation_outside_period": 0,
+    "full_history_after_final_cutoff": 0,
+    "future_schedule_in_historical_interactions": 0
+  }
+}

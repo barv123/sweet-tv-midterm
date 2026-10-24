@@ -1,0 +1,12 @@
+{
+  "started_at_utc": "2026-10-24T08:32:37.278041+00:00",
+  "finished_analysis_at_utc": "2026-10-24T08:36:55.749176+00:00",
+  "analysis_wall_seconds": 258.464,
+  "python_version": "3.12.0",
+  "platform": "Windows",
+  "peak_process_working_set_bytes": 1064906752,
+  "duckdb_memory_budget": "768MB",
+  "duckdb_threads": 2,
+  "cache_database_bytes": 844378112,
+  "cache_directory": "D:\\sweet-tv-midterm-cache"
+}

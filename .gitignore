@@ -1,5 +1,14 @@
 # Raw datasets stay local.
 /data/raw/
+/data/processed/
+
+# User-level evaluation and submission outputs remain local.
+/results/*per_user*.csv
+/results/*submission*.csv
+/results/*submission_validation.json
+/results/*_validation.json
+/results/baseline_experiment.json
+/results/pre_kaggle_reliability.json
 
 # Secrets and credentials.
 .env
@@ -35,6 +44,8 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .cache/
+*.duckdb
+*.duckdb.wal
 .ipynb_checkpoints/
 .tox/
 .nox/

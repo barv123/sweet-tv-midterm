@@ -1,0 +1,304 @@
+{
+  "assumptions": {
+    "channel_mapping": "equal numeric vsetv_id and channel_id, conditional on source confirmation",
+    "timezone": "Europe/Kyiv-compatible local clocks; elapsed durations computed in UTC; exact timezone not encoded by source",
+    "intervals": "half-open [start,end); retain strictly positive overlap",
+    "unknown_items": "tv_show_id=0 participates in coverage diagnostics but is never an interaction"
+  },
+  "coverage": {
+    "raw_viewing_rows": 5821987,
+    "any_schedule_matched_rows": 5408690,
+    "identified_matched_rows": 2964378,
+    "identified_matched_percent": 50.91694639647942,
+    "only_unknown_program_rows": 2444312,
+    "no_schedule_overlap_rows": 413297,
+    "missing_channel_rows": 113579,
+    "uncovered_time_rows": 299718,
+    "partially_identified_rows": 408683,
+    "incompletely_schedule_covered_rows": 413390,
+    "multi_airing_rows": 1339183,
+    "multi_identified_item_rows": 522994,
+    "ambiguous_rows": 9,
+    "duplicate_rows_removed": 17,
+    "excluded_quality_rows": 78,
+    "timezone_adjusted_duration_mismatches": 0,
+    "usable_matched_sessions": 2964330,
+    "usable_matched_users": 4895,
+    "raw_identified_edges": 3847738,
+    "usable_identified_edges": 3846979
+  },
+  "duration_discrepancies": [
+    {
+      "reported_minus_elapsed": -3600,
+      "start_date": "2020-03-28",
+      "rows": 2
+    },
+    {
+      "reported_minus_elapsed": -3600,
+      "start_date": "2020-03-29",
+      "rows": 115
+    }
+  ],
+  "interaction_thresholds": [
+    {
+      "minimum_overlap_seconds": 1,
+      "airing_interactions": 3846979,
+      "sessions": 2964330,
+      "users": 4895,
+      "items": 4363,
+      "user_item_pairs": 1371528
+    },
+    {
+      "minimum_overlap_seconds": 30,
+      "airing_interactions": 3793936,
+      "sessions": 2951930,
+      "users": 4895,
+      "items": 4363,
+      "user_item_pairs": 1361124
+    },
+    {
+      "minimum_overlap_seconds": 60,
+      "airing_interactions": 3741530,
+      "sessions": 2936467,
+      "users": 4895,
+      "items": 4362,
+      "user_item_pairs": 1350278
+    },
+    {
+      "minimum_overlap_seconds": 300,
+      "airing_interactions": 2377966,
+      "sessions": 1747939,
+      "users": 4890,
+      "items": 4272,
+      "user_item_pairs": 934011
+    },
+    {
+      "minimum_overlap_seconds": 600,
+      "airing_interactions": 1815994,
+      "sessions": 1317891,
+      "users": 4888,
+      "items": 4235,
+      "user_item_pairs": 767281
+    }
+  ],
+  "split": [
+    {
+      "period": "train",
+      "start_inclusive": "2020-03-09 00:00:00",
+      "end_exclusive": "2020-05-18 00:00:00",
+      "start_assigned_raw_sessions": 3945173,
+      "raw_users": 4876,
+      "cutoff_crossing_sessions": 1007,
+      "usable_interactions": 2310865,
+      "usable_sessions": 1877749,
+      "usable_users": 4841,
+      "usable_items": 2972,
+      "user_item_pairs": 841221,
+      "submission_users_with_history": 1250
+    },
+    {
+      "period": "validation",
+      "start_inclusive": "2020-05-18 00:00:00",
+      "end_exclusive": "2020-07-27 00:00:00",
+      "start_assigned_raw_sessions": 1876814,
+      "raw_users": 4820,
+      "cutoff_crossing_sessions": 0,
+      "usable_interactions": 1428512,
+      "usable_sessions": 1057953,
+      "usable_users": 4806,
+      "usable_items": 3229,
+      "user_item_pairs": 649303,
+      "submission_users_with_history": 1246
+    },
+    {
+      "period": "refit",
+      "start_inclusive": "2020-03-09 00:00:00",
+      "end_exclusive": "2020-07-27 00:00:00",
+      "start_assigned_raw_sessions": 5821987,
+      "raw_users": 4914,
+      "cutoff_crossing_sessions": 0,
+      "usable_interactions": 3741530,
+      "usable_sessions": 2936467,
+      "usable_users": 4895,
+      "usable_items": 4362,
+      "user_item_pairs": 1350278,
+      "submission_users_with_history": 1258
+    }
+  ],
+  "validation_cohorts": {
+    "validation_users": 4806,
+    "cold_users": 54,
+    "cold_items": 1390,
+    "cold_item_user_pairs": 223266,
+    "submission_users_with_labels": 1246,
+    "users_with_train_but_no_validation_labels": 89,
+    "repeated_train_user_item_pairs": 141366
+  },
+  "submission_history": {
+    "submission_users": 1260,
+    "without_usable_history": 2,
+    "without_train_history": 10,
+    "without_validation_labels": 14
+  },
+  "candidate_catalogs": [
+    {
+      "period": "train",
+      "airings": 115316,
+      "identified_items": 5842,
+      "items_on_previously_viewed_channels": 0
+    },
+    {
+      "period": "validation",
+      "airings": 121587,
+      "identified_items": 6384,
+      "items_on_previously_viewed_channels": 3519
+    },
+    {
+      "period": "final",
+      "airings": 144842,
+      "identified_items": 6649,
+      "items_on_previously_viewed_channels": 3689
+    }
+  ],
+  "schedule_file_boundary_rows": [
+    {
+      "source": "export_arh_11-20-final.csv",
+      "before_named_period": 86,
+      "after_named_period": 2431
+    },
+    {
+      "source": "export_arh_21-30-final.csv",
+      "before_named_period": 0,
+      "after_named_period": 2429
+    },
+    {
+      "source": "export_arh_31-42-final.csv",
+      "before_named_period": 0,
+      "after_named_period": 2399
+    }
+  ],
+  "timezone_probes": [
+    {
+      "channel_mapping": "equal_numeric_ids",
+      "viewing_shift_hours": -3,
+      "sample_rows": 38800,
+      "any_schedule_matches": 35161,
+      "identified_matches": 18018,
+      "stops_within_120s_of_boundary": 2685,
+      "starts_within_120s_of_boundary": 2722,
+      "before_dst_rows": 11929,
+      "before_dst_stop_aligned": 783,
+      "after_dst_rows": 26871,
+      "after_dst_stop_aligned": 1902
+    },
+    {
+      "channel_mapping": "equal_numeric_ids",
+      "viewing_shift_hours": -2,
+      "sample_rows": 38800,
+      "any_schedule_matches": 35161,
+      "identified_matches": 18047,
+      "stops_within_120s_of_boundary": 2724,
+      "starts_within_120s_of_boundary": 2737,
+      "before_dst_rows": 11929,
+      "before_dst_stop_aligned": 847,
+      "after_dst_rows": 26871,
+      "after_dst_stop_aligned": 1877
+    },
+    {
+      "channel_mapping": "equal_numeric_ids",
+      "viewing_shift_hours": -1,
+      "sample_rows": 38800,
+      "any_schedule_matches": 35162,
+      "identified_matches": 18235,
+      "stops_within_120s_of_boundary": 2576,
+      "starts_within_120s_of_boundary": 2624,
+      "before_dst_rows": 11929,
+      "before_dst_stop_aligned": 817,
+      "after_dst_rows": 26871,
+      "after_dst_stop_aligned": 1759
+    },
+    {
+      "channel_mapping": "equal_numeric_ids",
+      "viewing_shift_hours": 0,
+      "sample_rows": 38800,
+      "any_schedule_matches": 35163,
+      "identified_matches": 18651,
+      "stops_within_120s_of_boundary": 3482,
+      "starts_within_120s_of_boundary": 2877,
+      "before_dst_rows": 11929,
+      "before_dst_stop_aligned": 1102,
+      "after_dst_rows": 26871,
+      "after_dst_stop_aligned": 2380
+    },
+    {
+      "channel_mapping": "equal_numeric_ids",
+      "viewing_shift_hours": 1,
+      "sample_rows": 38800,
+      "any_schedule_matches": 35163,
+      "identified_matches": 18297,
+      "stops_within_120s_of_boundary": 2622,
+      "starts_within_120s_of_boundary": 2535,
+      "before_dst_rows": 11929,
+      "before_dst_stop_aligned": 844,
+      "after_dst_rows": 26871,
+      "after_dst_stop_aligned": 1778
+    },
+    {
+      "channel_mapping": "equal_numeric_ids",
+      "viewing_shift_hours": 2,
+      "sample_rows": 38800,
+      "any_schedule_matches": 35164,
+      "identified_matches": 18255,
+      "stops_within_120s_of_boundary": 2481,
+      "starts_within_120s_of_boundary": 2487,
+      "before_dst_rows": 11929,
+      "before_dst_stop_aligned": 760,
+      "after_dst_rows": 26871,
+      "after_dst_stop_aligned": 1721
+    },
+    {
+      "channel_mapping": "equal_numeric_ids",
+      "viewing_shift_hours": 3,
+      "sample_rows": 38800,
+      "any_schedule_matches": 35166,
+      "identified_matches": 18269,
+      "stops_within_120s_of_boundary": 2515,
+      "starts_within_120s_of_boundary": 2503,
+      "before_dst_rows": 11929,
+      "before_dst_stop_aligned": 789,
+      "after_dst_rows": 26871,
+      "after_dst_stop_aligned": 1726
+    },
+    {
+      "channel_mapping": "cyclic_permutation_control",
+      "viewing_shift_hours": 0,
+      "sample_rows": 38800,
+      "any_schedule_matches": 34227,
+      "identified_matches": 14739,
+      "stops_within_120s_of_boundary": 2697,
+      "starts_within_120s_of_boundary": 2694,
+      "before_dst_rows": 11929,
+      "before_dst_stop_aligned": 868,
+      "after_dst_rows": 26871,
+      "after_dst_stop_aligned": 1829
+    }
+  ],
+  "independent_verification": {
+    "examples": 14,
+    "passed": 14,
+    "method": "Independent csv.DictReader + zoneinfo UTC interval scan over both historical schedules"
+  },
+  "invariants": {
+    "duplicate_edges": 0,
+    "nonpositive_overlap": 0,
+    "invalid_interaction_items": 0,
+    "bad_quality_interactions": 0,
+    "train_cutoff_violations": 0,
+    "validation_cutoff_violations": 0,
+    "future_schedule_used": 0,
+    "invalid_overlap_arithmetic": 0,
+    "unambiguous_overcount": 0
+  },
+  "local_interaction_table": "D:\\sweet-tv-midterm-cache\\audit.duckdb:interactions",
+  "runtime_seconds": 162.642
+}

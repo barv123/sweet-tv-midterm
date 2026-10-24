@@ -1,0 +1,41 @@
+template_row,relevant_items_for_user,method,user_ap_at_5,rank,tv_show_id,representative_schedule_title,category,heldout_relevant,title_rule
+2,19,popularity,0.55,1,2400480,ТСН.,Инфо,True,most frequent schedule title; lexical tie-break
+2,19,popularity,0.55,2,240081,Факты.,Инфо,True,most frequent schedule title; lexical tie-break
+2,19,popularity,0.55,3,2400508,Сегодня.,Инфо,False,most frequent schedule title; lexical tie-break
+2,19,popularity,0.55,4,6500479,'Мир наизнанку'.,Познавательное,True,most frequent schedule title; lexical tie-break
+2,19,popularity,0.55,5,2400467,'Викна-Новости'.,Инфо,False,most frequent schedule title; lexical tie-break
+2,19,content_metadata_title,0.55,1,2400480,ТСН.,Инфо,True,most frequent schedule title; lexical tie-break
+2,19,content_metadata_title,0.55,2,240081,Факты.,Инфо,True,most frequent schedule title; lexical tie-break
+2,19,content_metadata_title,0.55,3,5900347,'Деньги'.,Инфо,False,most frequent schedule title; lexical tie-break
+2,19,content_metadata_title,0.55,4,6700482,Секретные материалы.,Другое,True,most frequent schedule title; lexical tie-break
+2,19,content_metadata_title,0.55,5,500368,Ток-шоу '60 минут' с Ольгой Скабеевой и Евгением Поповым.,Развлечения,False,most frequent schedule title; lexical tie-break
+2,19,association_count25_lift1,0.32,1,2400508,Сегодня.,Инфо,False,most frequent schedule title; lexical tie-break
+2,19,association_count25_lift1,0.32,2,6500479,'Мир наизнанку'.,Познавательное,True,most frequent schedule title; lexical tie-break
+2,19,association_count25_lift1,0.32,3,2400467,'Викна-Новости'.,Инфо,False,most frequent schedule title; lexical tie-break
+2,19,association_count25_lift1,0.32,4,240081,Факты.,Инфо,True,most frequent schedule title; lexical tie-break
+2,19,association_count25_lift1,0.32,5,10002514,Т/с 'Кухня'.,Сериалы,True,most frequent schedule title; lexical tie-break
+2,19,hybrid_rrf60,1.0,1,2400480,ТСН.,Инфо,True,most frequent schedule title; lexical tie-break
+2,19,hybrid_rrf60,1.0,2,240081,Факты.,Инфо,True,most frequent schedule title; lexical tie-break
+2,19,hybrid_rrf60,1.0,3,6500479,'Мир наизнанку'.,Познавательное,True,most frequent schedule title; lexical tie-break
+2,19,hybrid_rrf60,1.0,4,200352,'Вечерний квартал'.,Развлечения,True,most frequent schedule title; lexical tie-break
+2,19,hybrid_rrf60,1.0,5,6700482,Секретные материалы.,Другое,True,most frequent schedule title; lexical tie-break
+44,87,popularity,0.0,1,2400480,ТСН.,Инфо,False,most frequent schedule title; lexical tie-break
+44,87,popularity,0.0,2,240081,Факты.,Инфо,False,most frequent schedule title; lexical tie-break
+44,87,popularity,0.0,3,2400508,Сегодня.,Инфо,False,most frequent schedule title; lexical tie-break
+44,87,popularity,0.0,4,6500479,'Мир наизнанку'.,Познавательное,False,most frequent schedule title; lexical tie-break
+44,87,popularity,0.0,5,2400467,'Викна-Новости'.,Инфо,False,most frequent schedule title; lexical tie-break
+44,87,content_metadata_title,0.0,1,90054150,Х/ф 'Даже не думай!'.,Фильмы,False,most frequent schedule title; lexical tie-break
+44,87,content_metadata_title,0.0,2,90058273,Х/ф 'Турбофорсаж'.,Фильмы,False,most frequent schedule title; lexical tie-break
+44,87,content_metadata_title,0.0,3,90076564,Х/ф 'Бесплатные образцы'.,Фильмы,False,most frequent schedule title; lexical tie-break
+44,87,content_metadata_title,0.0,4,90076595,Х/ф 'Гуманитарные науки'.,Фильмы,False,most frequent schedule title; lexical tie-break
+44,87,content_metadata_title,0.0,5,90079285,Х/ф 'Тронутые'.,Фильмы,False,most frequent schedule title; lexical tie-break
+44,87,association_count25_lift1,0.0,1,240081,Факты.,Инфо,False,most frequent schedule title; lexical tie-break
+44,87,association_count25_lift1,0.0,2,10002514,Т/с 'Кухня'.,Сериалы,False,most frequent schedule title; lexical tie-break
+44,87,association_count25_lift1,0.0,3,700389,Кто сверху?,Развлечения,False,most frequent schedule title; lexical tie-break
+44,87,association_count25_lift1,0.0,4,200352,'Вечерний квартал'.,Развлечения,False,most frequent schedule title; lexical tie-break
+44,87,association_count25_lift1,0.0,5,2400480,ТСН.,Инфо,False,most frequent schedule title; lexical tie-break
+44,87,hybrid_rrf60,0.0,1,240081,Факты.,Инфо,False,most frequent schedule title; lexical tie-break
+44,87,hybrid_rrf60,0.0,2,2400480,ТСН.,Инфо,False,most frequent schedule title; lexical tie-break
+44,87,hybrid_rrf60,0.0,3,10002514,Т/с 'Кухня'.,Сериалы,False,most frequent schedule title; lexical tie-break
+44,87,hybrid_rrf60,0.0,4,6500479,'Мир наизнанку'.,Познавательное,False,most frequent schedule title; lexical tie-break
+44,87,hybrid_rrf60,0.0,5,200352,'Вечерний квартал'.,Развлечения,False,most frequent schedule title; lexical tie-break
