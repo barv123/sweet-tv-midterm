@@ -1,0 +1,291 @@
+Temporal TV Recommendation:Frequency, Content, and Association Evidence
+
+Amina Bayandinova · Individual · BASB252 · HSE Universityakbayandinova@edu.hse.ru · 2026-10-24LLM4Rec — Final Exam Quiz (GSB)
+
+Repository: https://github.com/barv123/sweet-tv-midterm
+
+Abstract—Recommending five future TV programs requires converting channel-viewing intervals into sparse and incomplete program evidence. This study implements content-based filtering and directional association rules, compares them with popularity and personal-frequency baselines on two chronological holdouts, and evaluates a conservative rank-fusion strategy. The designated frequency-plus-association submission achieved Kaggle Private MAP@5 of 0.40943 and Public MAP@5 of 0.42309, documented by the original score screenshot. Repeated local improvements did not reliably transfer to Kaggle, motivating explicit relevance rules, reproducible checks, and rejection of unsupported replacements.
+
+Index Terms—recommender systems, implicit feedback, association rules, temporal validation, MAP@5.
+
+I. Introduction
+
+The task is to predict five program IDs for each of 1,260 template users during ISO weeks 31–42 of 2020. A service needs both familiar programs and plausible alternatives, but the data contain viewing intervals rather than explicit ratings or satisfaction. For example, a repeat cartoon viewer may benefit from familiar episodes; a popular news show is not necessarily a good substitute.
+
+The contributions are an audited single-airing interaction definition, two independently implemented required methods, and an evidence-backed decision to retain a modest association supplement to personal frequency. No online engagement or revenue improvement is claimed.
+
+II. Related Work
+
+Content and collaborative approaches use different evidence and have different cold-start limits [1]. Directional association rules summarize item co-occurrence using support, confidence, and lift [2]; this project computes pairwise rules directly from sparse user transactions, rather than using a third-party recommender. Reciprocal-rank fusion combines rankings without treating scores as calibrated probabilities [3].
+
+Melentev's competition write-up [4] motivated the separate &gt;50% training and &gt;80% relevance thresholds. It is participant methodology, not organizer scoring code. Only its prose was consulted; no linked competitor repository or notebook was opened or adapted. The project uses its own implementation. Matrix factorization and personalized PageRank were considered but not fitted; sparse item-CF was tested later and rejected on temporal trade-offs.
+
+Dataset
+
+The log contains 5,821,987 intervals from 4,914 users and 202 viewing channels. The three schedule files contain 1,074,235, 1,074,394, and 1,295,378 rows; their union has 405 channels and 9,671 positive program IDs. Only 115,613/1,074,235 (10.76%) early schedule rows carry a nonzero program ID. This is a fraction of rows, not a measured duration-weighted airtime fraction. User IDs remain strings: many exceed signed 64-bit range.
+
+III. Method
+
+Pipeline. Parse timestamps → apply quality gates → match channel/time intervals → construct per-airing signals → fit on pre-cutoff history → restrict to scheduled candidates → rank five unique positive IDs. The audit cache stores matches; experiments reuse it rather than rebuilding interval joins.
+
+Matching. Viewing vsetv_id equals schedule channel_id. Overlap is max(0, min(view end, airing end) − max(view start, airing start)), measured in elapsed seconds with Europe/Kyiv DST handling. Divide by that airing's duration. A usable single row must cover strictly &gt;50% for training and strictly &gt;80% for relevance. Exactly 80% is negative. Never add separate sessions/channels/airings to cross a threshold.
+
+Discard nonpositive IDs, unusable durations, exact duplicate copies, &gt;24-hour viewing rows, and ambiguous simultaneous scheduled airings. Program ID 0 is unlabelled context, never a recommendation. Candidate airings intersect the prediction window; repeats are allowed identically across methods. Future viewing is never used; future schedule metadata is exogenous.
+
+Popularity and frequency. Popularity counts distinct training users per program. Frequency counts distinct qualifying schedule IDs for each user-program pair, without decay. Ties use popularity then ascending numeric program ID. Cold users receive the same popularity list; zero-score slots also use this fallback. Repeat/recency instead sums distinct watched dates with a 14-day exponential half-life.
+
+Required method 1: content. Weighted tokens represent category (1), genre (1), director (0.5), production decade (0.3), title words (1), and missingness (0.1). Vocabulary and IDF are fitted on pre-cutoff metadata; IDF = 1 + ln((1+n)/(1+df)). Item vectors and weighted user profiles are L2-normalized, then ranked by cosine similarity. User profiles use 14-day recency weights. Sparse metadata limits discrimination.
+
+Required method 2: association. One binary transaction per training user. For A→B: support=nAB/N, confidence=nAB/nA, lift=confidence/(nB/N). Keep pair count ≥25, item viewers ≥20, confidence ≥0.1, lift ≥1.0, and at most 100 outgoing rules per antecedent. Weight = confidence × ln(1+lift); aggregate with the user's normalized 14-day history. Self-rules are excluded; already-watched candidates remain eligible.
+
+Designated hybrid. Score(i)=I(i∈F100)/(60+rF(i)) + 0.03 I(i∈A5)/(60+rA(i)). Here F100 is frequency's Top-100 and A5 is association's Top-5. Absent components contribute zero; ties follow the common policy. Two predeclared fusion weights (0.03/0.06) were evaluated; 0.03 improved both folds. The association component retains recency, even though the dominant frequency component does not.
+
+IV. Experiments: Identical Temporal Protocol
+
+All methods evaluate the same 1,260 users, including empty truth with AP=0. Inner training: [9 March, 6 April); validation: [6 April, 20 April), 2020. Outer training: [9 March, 18 May); validation: [18 May, 27 July). Whole sessions crossing a cutoff are omitted. Inner/outer pools contain 2,143/6,384 candidates and 8,326/39,698 relevant user-program pairs; 104/24 users have empty truth. Final training ends 27 July; the candidate window is [27 July, 19 October), with 6,649 eligible programs.
+
+AP@5(u) = Σ(k=1..5) [hit(k) × cumulative_hits(k)/k] / min(5, |relevant(u)|), or zero for empty truth; MAP@5 is the mean over all users. The denominator convention and label reconstruction are explicitly stated, not asserted to be the hidden Kaggle evaluator.
+
+Method | Inner MAP@5 | Outer MAP@5
+
+Popularity | 0.32256239 | 0.45134193
+
+Repeat/recency | 0.40682760 | 0.49195503
+
+Content (required) | 0.30822950 | 0.34429740
+
+Association (required) | 0.31323567 | 0.44183708
+
+Equal RRF60 (earlier) | 0.37190498 | 0.50994400
+
+Frequency, no decay | 0.42272068 | 0.53413668
+
+Distinct days | 0.42730842 | 0.54207606
+
+Frequency + association .03 | 0.42616645 | 0.54430666
+
+The hybrid improves no-decay frequency by +0.00344577 inner and +0.01016997 outer. Improved/worsened users: 277/187 inner and 300/181 outer. Removing the ten largest positive user changes still leaves mean gains of +0.00117733/+0.00847267. Membership changed for 415/407 users; another 598/621 changed order only. These diagnostics describe development evidence, not formal generalization guarantees.
+
+Four Actual Kaggle Submissions
+
+Submission (chronological) | Public | Private
+
+Repeat/recency | 0.33374 | 0.31000
+
+Frequency, no decay | 0.41695 | 0.40179
+
+Distinct viewing days | 0.41768 | 0.39486
+
+Frequency + association .03 | 0.42309 | 0.40943
+
+Fig. 1. Genuine, unmodified local Kaggle screenshot (24 October 2026, 17:31:40); display-scaled only. The first row is the designated submission. Scores were transcribed and checked against this image; no live API response or cohort rank is claimed.
+
+The instructor's private-score exam version grades returned Private score, whereas another local version says Public. Both are shown. Late submissions are accepted even though the original leaderboard is frozen. Distinct days improved both local folds but reduced Private MAP@5 from 0.40179 to 0.39486: an observed warning against equating local gains with Kaggle gains.
+
+User 3: repeat viewer
+
+Template row 3 (pseudonymous), 135 qualifying training airings and 21 held-out relevant programs. Selection: existing repeat-viewer example; the cold case is chosen using training history only. Same user across every core method.
+
+Method | Ordered Top-5 IDs (*=hit) | AP@5
+
+Popularity | 2400480 → 240081 → 2400467 → 2400508* → 200344 | 0.0500
+
+Repeat/recency | 12001682* → 2400467 → 12001734* → 400387 → 12002896* | 0.4533
+
+Content | 12001682* → 120079564 → 120078221 → 120078458 → 120081984 | 0.2000
+
+Association | 2400480 → 240081 → 2400508* → 2400467 → 200344 | 0.0667
+
+Frequency | 12001682* → 12002856* → 12001732* → 2400467 → 10003159 | 0.6000
+
+Designated hybrid | 12001682* → 12002856* → 2400467 → 12001732* → 2400480 | 0.5500
+
+Titles below are exact schedule strings (one earliest available representative per ID); episode/title aliases exist. Categories are translated: Children, News, Entertainment, Series. This is descriptive lookup, not a new model feature.
+
+200344 — 'Чистоnews'. [Entertainment]
+
+240081 — Факты. День. [News]
+
+400387 — 'Следствие ведут экстрасенсы'. [Entertainment]
+
+2400467 — 'Викна-Новости'. [News]
+
+2400480 — ТСН. Неделя. [News]
+
+2400508 — Сегодня. Итоги с Олегом Панютой. [News]
+
+10003159 — Премьера. Т/с 'Ничто не случается дважды', 1 с. [Series]
+
+12001682 — М/с 'Губка Боб Квадратные Штаны'. [Children]
+
+12001732 — М/с 'Пингвины из 'Мадагаскара'. [Children]
+
+12001734 — М/с 'Волшебные покровители', 161 с. 'Женат на мамочке'. [Children]
+
+12002856 — М/с 'Элвиннн!!! и бурундуки'. [Children]
+
+12002896 — М/с 'Вспыш и чудо-машинки', 1 сезон, 15 с. 'Авто-Рейнджеры'. [Children]
+
+120078221 — М/ф 'Бабай'. [Children]
+
+120078458 — М/ф 'Турбо'. [Children]
+
+120079564 — М/ф 'Губка Боб в 3D'. [Children]
+
+120081984 — Премьера. М/ф 'Гринч'. [Children]
+
+User 114: cold start
+
+Template row 114 (pseudonymous), 0 qualifying training airings and 5 held-out relevant programs. Selection: first cold user by template order; the cold case is chosen using training history only. Same user across every core method.
+
+Method | Ordered Top-5 IDs (*=hit) | AP@5
+
+Popularity | 2400480 → 240081* → 2400467 → 2400508 → 200344 | 0.1000
+
+Repeat/recency | 2400480 → 240081* → 2400467 → 2400508 → 200344 | 0.1000
+
+Content | 2400480 → 240081* → 2400467 → 2400508 → 200344 | 0.1000
+
+Association | 2400480 → 240081* → 2400467 → 2400508 → 200344 | 0.1000
+
+Frequency | 2400480 → 240081* → 2400467 → 2400508 → 200344 | 0.1000
+
+Designated hybrid | 2400480 → 240081* → 2400467 → 2400508 → 200344 | 0.1000
+
+Titles below are exact schedule strings (one earliest available representative per ID); episode/title aliases exist. Categories are translated: Children, News, Entertainment, Series. This is descriptive lookup, not a new model feature.
+
+200344 — 'Чистоnews'. [Entertainment]
+
+240081 — Факты. День. [News]
+
+2400467 — 'Викна-Новости'. [News]
+
+2400480 — ТСН. Неделя. [News]
+
+2400508 — Сегодня. Итоги с Олегом Панютой. [News]
+
+What these users actually show
+
+User 3's frequency list hits three children's programs at ranks 1–3 (AP=0.60). The hybrid promotes a nonrelevant news program to rank 3, moving a hit to rank 4 (AP=0.55). Its aggregate gain therefore does not imply every user's gain. Association alone leans toward popular news and obtains only one hit; content proposes four unseen children's films, none relevant in this holdout. Semantic novelty is not automatically useful discovery.
+
+For user 114, all six core methods return the identical popularity fallback. Only program 240081 at rank 2 is relevant, so AP=(1/2)/5=0.10. The absence of pre-cutoff qualifying records does not establish that the person never watched TV or that the account was newly created. Cold personalization cannot be inferred from these observations.
+
+For a platform, retain familiar programs as the backbone and use a small co-view correction rather than allowing broad category similarity to replace strong repeat evidence. The ranking should be presented as a predicted watch list, not evidence of enjoyment. Inspect cold-user and children's-content performance separately; these examples do not identify a user's age or household composition.
+
+The early equal-weight hybrid is an historical comparison; later feature variants are ablations rather than the two independently required methods. Complete paired ablation outputs and configurations are retained separately. No matrix-factorization or PageRank result is claimed.
+
+IV-B. Same Two Users Across the Core Methods (Outer Holdout)
+
+V. Discussion and Rejected Improvements
+
+Completed setting | Inner | Outer
+
+Distinct days | 0.42731 | 0.54208
+
+Future exposure (cap 15%) | 0.41872 | 0.53559
+
+A_days_005 | 0.42182 | 0.53337
+
+A_days_010 | 0.42192 | 0.53345
+
+B_rules_006 | 0.41814 | 0.54437
+
+A_low025 | 0.42478 | 0.54474
+
+A_low050_high025 | 0.42209 | 0.54560
+
+B_cf003 | 0.42094 | 0.54808
+
+B_cf006 | 0.41751 | 0.54588
+
+C_weak0035 | 0.42602 | 0.54646
+
+C_weak0050 | 0.42654 | 0.55012
+
+channel_005 | 0.41920 | 0.53626
+
+channel_010 | 0.41702 | 0.53138
+
+propensity_005 | 0.41227 | 0.52904
+
+propensity_010 | 0.41200 | 0.52496
+
+Days bonuses used normalized frequency plus 0.05/0.10 normalized days. Future exposure was a capped schedule-frequency boost. A_low025 uses F&gt;50 + 0.25F30–50; A_low050_high025 adds 0.50F30–50 + 0.25F&gt;80. B_cf003/006 add item-CF RRF weights 0.03/0.06. CF uses shrunk cosine co-view weights, ≥5 joint users, ≥10 viewers and at most 40 neighbors.
+
+C_weak0035 increases association weight to 0.06 when max count&lt;3 or Top-5 share&lt;0.35; C_weak0050 uses &lt;5 or &lt;0.50 and weight 0.10. Strong users retain 0.03 and cold users popularity. Channel and historical-propensity bonuses use 0.05/0.10 × maximum personal frequency × normalized feature. Historical propensity is (watched+1)/(completed opportunities+20), requiring ≥10 airings and ≥90% channel-day coverage.
+
+After the champion, a candidate needed ≥0.002 inner and ≥0.005 outer gain, ≥50 improving users on each fold, more gainers than losers, and positive mean gain after excluding the ten largest gains. No candidate passed. C_weak0050 reached 0.55011618 outer, but inner gain was only 0.00037037 and became −0.00230267 after removing ten gains. No fifth Kaggle submission was forced.
+
+Failure → Cause → Fix → Verification
+
+A real execution failure was AssertionError: No-decay leakage check failed. The check joined each validation user-program label back to every historical event for that pair, so legitimate earlier observations were falsely counted outside the fold. The fix tested whether each label had a qualifying in-window event, while retaining a separate training cutoff assertion. The corrected run reproduced both folds; independent SQL/Python AP checks agreed. This fixed a diagnostic query, not a hidden-label leak.
+
+What worked; what failed
+
+No-decay frequency outperformed the 14-day recency heuristic on the long horizon, and a small association correction improved both local folds and returned Kaggle scores. In contrast, replacing frequency by distinct days lost Private performance despite local gains. Channel affinity and historical exposure normalization lost on both folds; they were not silently retuned.
+
+Sparse fields plausibly constrain content discrimination: first genre is missing in roughly 57% of schedule rows and director in roughly 90%. This is a measured data property, not proof of the causal reason for the content model's lower MAP. User 3 provides a concrete case where broad children's metadata yields irrelevant alternatives.
+
+Limits of validation and inference
+
+The two folds have different horizon lengths, activity distributions and candidate pools. Higher outer MAP is not directly a better model: longer truth windows supply more relevant programs. All 1,260 users remain in the denominator. The same folds were repeatedly reused for development; neither is an untouched final test, and approximate paired intervals after selection are not confirmatory tests.
+
+Kaggle scores were not fitting labels, but observing four submissions and then choosing a strategy introduces adaptive selection. The Private score is therefore reported as an external returned score, not an unbiased estimate of deployment performance. The strict &gt;80% reconstruction is participant-informed; the instructor permits a justified threshold, but this does not certify the hidden evaluator.
+
+The log supplies channel intervals, not intra-session channel-change telemetry, enjoyment, device identity, or entitlement. Schedule completeness and program aliases remain imperfect. In the latest check, only 282/2,143 inner and 648/6,384 outer candidates passed historical-exposure reliability filters. Day coverage does not prove user opportunity to watch.
+
+Business decision and next step
+
+Select the frequency-plus-association champion: cheap aggregation, transparent components, valid candidate coverage, and the strongest actual score among the four submissions. It mainly reranks repeat preferences; on the outer fold, 407 inserted Top-5 slots included only 25 programs absent from &gt;50% training history. Do not market it as broad discovery. With more time, reserve a genuinely untouched later block and audit timestamp/channel completeness before any new tuning. A future controlled online study would be a proposal, not a completed experiment.
+
+IV-C. Reproducible Numerical Verification
+
+For template row 3 on the outer fold, the frequency recommendations are [12001682, 12002856, 12001732, 2400467, 10003159]. Their qualifying training-airing counts are [29, 12, 10, 9, 8], and relevance flags are [1,1,1,0,0]. With 21 relevant programs, AP@5 = (1/1 + 2/2 + 3/3)/min(5,21) = 3/5 = 0.600000.
+
+The champion changes the list to [12001682, 12002856, 2400467, 12001732, 2400480], with flags [1,1,0,1,0]. AP@5 = (1 + 1 + 3/4)/5 = 11/20 = 0.550000. This explicit counterexample prevents claiming universal hybrid improvement. Exact Fraction arithmetic and the metric function were cross-checked again during report preparation; this is a tool-executed verification, not an invented claim of personal hand calculation.
+
+Previously saved evidence reconstructs 12 sampled users' strict labels directly from raw CSV rows, including exact-80% negatives. Across the strict comparison, 12,600 method-user-fold AP values matched SQL/Python calculations with maximum error zero. The current preparation reran 25 unit tests: all passed. It also revalidated the exact champion file, rather than training a new candidate.
+
+Reproducibility and resources
+
+Windows; AMD Ryzen 5 3500U; 7,448,702,976 bytes installed usable memory reported by the system. Python 3.12; NumPy 2.4.4; SciPy 1.17.1; DuckDB 1.4.3; tzdata 2025.3 [5]. DuckDB uses two threads and a 768 MB managed-memory limit with disk spilling. Algorithms are deterministic: no stochastic training seed is needed; ties use fixed numeric order.
+
+Saved successful cached-run times: no-decay evaluation/refit 42.367 s; distinct-days/exposure checkpoint 40.377 s; conservative four-setting checkpoint/refit 44.821 s; later six-setting sprint 69.782 s; channel/propensity checkpoint 39.486 s. These are different scopes, exclude failed attempts/setup, and are not per-model speed benchmarks.
+
+From a fresh authorized dataset: install requirements.txt, run data/src/run_pipeline.py, then the documented strict evaluation and frozen winner reproduction. The final reproduction command is data/src/reproduce_winning_submission.py; it refuses to overwrite the champion and requires a byte-identical SHA-256. Report construction uses requirements-report.txt and data/src/build_exam_report.py; it reads small saved evidence, not raw logs.
+
+Final CSV: submission_frequency_conservative_B_rules_003_strict80.csv. Header user_id,tv_show_id; 1,260 exact-order users; 6,300 prediction slots; five unique positive eligible IDs each; zero format/eligibility errors. SHA-256: b9830a42c341a02caf2557f1469653b482a39ca277af225eabfa7d2557d25fbb.
+
+VI. AI Usage Disclosure
+
+OpenCode 1.18.31 was used for code generation, debugging, cached-data analysis, tests, model comparisons, Git operations, reference checking, and report drafting. The original tool-native export records model identifiers glm-5.3, gpt-5.6-terra, gpt-6-astra, gpt-6-luna, gpt-6.1-sol, and nemotron-3.5-super-vl-free. These are recorded identifiers, not claims that every model performed every task.
+
+Student-directed decisions evidenced in the session: requesting strict relevance checks, protecting the best CSV, limiting experiments and runtimes, questioning local-to-Kaggle transfer, requiring negative results, and stopping optimization. The supplied screenshot corroborates the four returned Kaggle scores. No externally sourced competitor implementation was used; NumPy/SciPy/DuckDB are legitimate dependencies.
+
+Verification attribution. Automated actions include unit tests, interval/label checks, byte hashes, independent SQL/Python AP agreement, exact arithmetic, and saved-prediction reproduction. The assistant checked reference metadata against Crossref and inspected the participant prose and library documentation. These checks do not establish that the student personally read every paper, manually recomputed every result, or reviewed every code line. No such claim is made.
+
+Trusted or not fully verified: hidden Kaggle labels and evaluation implementation; whether a source viewing row is truly uninterrupted; complete schedule/user-entitlement coverage; and the interpretation of anonymous users. Bibliographic metadata validation is not a claim of reading all cited full texts. The student must personally review this draft, redo the displayed arithmetic, and explain the decision in their own words before submission; the session does not establish that these final personal actions are complete.
+
+Original audit trail. Submit amina_bayandinova_exam_session.json exported directly from session ses_e9311914effezXO4RVA3gLTl5K. The exporter captures native stdout bytes without reconstruction, sanitization, truncation, or reserialization. The export is a snapshot of a continuing session; export again after final work if later messages must be included. It contains more than 10 MB, so the inherited guidelines require contacting the instructor about upload size. Do not silently replace it with a summary.
+
+Delivery and provenance
+
+The private-score exam brief specifies 24 October 2026, 19:00 MSK and exactly two LMS files: this PDF and the original session JSON. The exact designated CSV is in GitHub. The other local exam version uses Public score, so Fig. 1 supplies both. The inherited guideline has conflicting five-/six-page statements; this report conservatively uses five content pages plus references.
+
+The repository resolves through authenticated Git; anonymous access returned 404 during preparation. The instructor must have repository access. Raw datasets, caches, full user histories and the session export are not published. Only the explicitly requested final template prediction CSV is excepted from the submission ignore rule. A screenshot and a report do not themselves grant dataset redistribution rights.
+
+References
+
+[1] G. Adomavicius and A. Tuzhilin, “Toward the next generation of recommender systems: A survey of the state-of-the-art and possible extensions,” IEEE Transactions on Knowledge and Data Engineering, vol. 17, no. 6, pp. 734–749, 2005. DOI: 10.1109/TKDE.2005.99. https://doi.org/10.1109/TKDE.2005.99. Metadata verified through Crossref, accessed 2026-10-24.
+
+[2] R. Agrawal, T. Imieliński, and A. Swami, “Mining association rules between sets of items in large databases,” in Proc. ACM SIGMOD International Conference on Management of Data, 1993, pp. 207–216. DOI: 10.1145/170035.170072. https://doi.org/10.1145/170035.170072. Metadata verified through Crossref, accessed 2026-10-24.
+
+[3] G. V. Cormack, C. L. A. Clarke, and S. Buettcher, “Reciprocal rank fusion outperforms condorcet and individual rank learning methods,” in Proc. 32nd International ACM SIGIR Conference, 2009, pp. 758–759. DOI: 10.1145/1571941.1572114. https://doi.org/10.1145/1571941.1572114. Metadata verified through Crossref, accessed 2026-10-24.
+
+[4] N. Melentev, “Two-layered Recommender System Methodology: A Prize-Winning Solution,” Towards Data Science / Medium, Mar. 20, 2021. medium.com/data-science/two-layered-recommender-system-methodology-a-prize-winning-solution-c4bdb815b156. Accessed 2026-10-24. Participant-methodology prose only; not a scholarly paper or organizer rule specification. Linked competitor code was not consulted.
+
+[5] NumPy Developers, “NumPy documentation”; SciPy Community, “Sparse arrays (scipy.sparse)”; DuckDB Foundation, “DuckDB documentation.” https://numpy.org/doc/stable/; https://docs.scipy.org/doc/scipy/reference/sparse.html; https://duckdb.org/docs/stable/. Accessed 2026-10-24. Current documentation versions differ from the pinned execution versions listed in the report.
+
+[6] LLM4Rec course materials, HSE University, “Final Exam Quiz (GSB): TV Program Recommendation on sweet.tv,” local files exam_quiz_GSB.md and exam_quiz_GSB (2).md; S. Jin, “LLM4Rec — Homework Guidelines,” local homework_guidelines.pdf. Inspected 2026-10-24. The two exam files differ on Public versus Private grading; both specify the same deadline and two-file submission. No invented public URL is supplied for private local materials.
+
+[7] A. Bayandinova, “SWEET.TV Midterm,” project source and measured evidence, 2026. https://github.com/barv123/sweet-tv-midterm. Authenticated Git remote verified; reviewer authorization may be required. Competition: https://www.kaggle.com/competitions/sweettv-tv-program-recommender. Returned scores are evidenced by Fig. 1 rather than a claim of live API verification.

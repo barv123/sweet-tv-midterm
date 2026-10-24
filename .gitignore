@@ -5,6 +5,7 @@
 # User-level evaluation and submission outputs remain local.
 /results/*per_user*.csv
 /results/*submission*.csv
+!/results/submission_frequency_conservative_B_rules_003_strict80.csv
 /results/*submission_validation.json
 /results/*_validation.json
 /results/baseline_experiment.json
